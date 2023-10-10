@@ -91,7 +91,7 @@ class PostParser:
             return self._clean_string(match.group(group))
 
     def _clean_string(self, string):
-        return string.strip().replace('\n', '').replace('\r', '').replace("**", "")
+        return string.strip().replace('\n', '').replace('\r', '').replace("**", "").replace("\"", "")
 
     def parse(self) -> ParsedPost:
         age = self.match_regex(self.AGE_REGEX, 2)
